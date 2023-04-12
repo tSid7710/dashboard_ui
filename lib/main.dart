@@ -2,7 +2,11 @@ import 'package:dashboard_ui/login.dart';
 import 'package:dashboard_ui/pages/page1.dart';
 import 'package:dashboard_ui/pages/page2.dart';
 import 'package:dashboard_ui/pages/page3.dart';
+import 'package:dashboard_ui/workorder.dart';
 import 'package:flutter/material.dart';
+
+import 'home.dart';
+import 'notifi_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +41,7 @@ class _HomePageState extends State<HomePage> {
           centerTitle: true,
         ),
         drawer: const DrawerWidget(),
+        body:const MyHomePage(),
       ),
     );
   }
@@ -59,8 +64,11 @@ class DrawerWidget extends StatelessWidget {
           ),
           CustomListTile(
             title: "Notification",
-            navigateToPage: Page1(),
-            icon: Icon(Icons.notifications),
+            navigateToPage: Notifi_list(),
+            icon: Icon(
+              Icons.notifications,
+              color: Colors.red,
+            ),
           ),
           CustomListTile(
             title: "Notification List",
@@ -69,7 +77,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           CustomListTile(
             title: "Work Order",
-            navigateToPage: Page3(),
+            navigateToPage: WorkOrder(),
             icon: Icon(Icons.work),
           ),
           CustomListTile(
